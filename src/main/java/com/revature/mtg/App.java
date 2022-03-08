@@ -25,6 +25,7 @@ public class App {
             cards.add(rs.getString("Name"));
         }
 
+
         HttpServlet cardServlet = new HttpServlet() {
             static int counter;
             @Override
