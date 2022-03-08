@@ -35,8 +35,10 @@ public class App {
                 try {
                     ResultSet rs = conn.prepareStatement("select * from cards").executeQuery();
                     while (rs.next()) {
-                        cards.add(new Card(rs.getString("Name"), rs.getInt("TypeId"), rs.getInt("Cost")));
+                        Card cardToAdd = new Card(rs.getString("Name"), rs.getInt("TypeId"), rs.getInt("ManaCost"));
+                        cards.add(cardToAdd);
                     }
+
                 } catch (SQLException e) {
                     System.err.println("Failed to retrieve from database: " + e.getSQLState());
                 }

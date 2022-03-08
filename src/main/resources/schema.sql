@@ -16,5 +16,5 @@ CREATE INDEX "IFK_TypesId" ON "types" ("TypeId");
 
 INSERT INTO "cards" VALUES (1,5,'Naomi Pillar of Order');
 INSERT INTO "cards" VALUES (2,3,'Satoru Umezawa');
-INSERT INTO "cards" VALUES (3,1,'Dub');
-INSERT INTO "types" VALUES (1, 'Creature');
+
+INSERT INTO "types" VALUES (1, 'Creature');*
