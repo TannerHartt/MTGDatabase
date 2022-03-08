@@ -26,7 +26,6 @@ public class App {
         }
 
 
-
         HttpServlet cardServlet = new HttpServlet() {
             static int counter;
             @Override
