@@ -27,9 +27,17 @@ public class App {
 
 
         HttpServlet cardServlet = new HttpServlet() {
-            static int counter;
             @Override
             protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+                List<Card> cards = new ArrayList<>();
+                try {
+                    ResultSet rs = conn.prepareStatement("select * from cards").executeQuery();
+                    while (rs.next()) {
+                        cards.add(new Card(rs.getString("Name"), rs.getInt("TypeId"), rs.getInt("Cost")));
+                    }
+                } catch (SQLException e) {
+                    System.err.println("Failed to retrieve from database: " + e.getSQLState());
+                }
                 // Get JSON mapper
                 ObjectMapper mapper = new ObjectMapper();
                 String results = mapper.writeValueAsString(cards);
@@ -39,13 +47,15 @@ public class App {
             @Override
             protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
                 ObjectMapper mapper = new ObjectMapper();
-                String newCard = mapper.readValue(req.getInputStream(), String.class);
+                Card newCard = mapper.readValue(req.getInputStream(), Card.class);
                 try {
-                    PreparedStatement stmt = conn.prepareStatement("insert into 'cards' values (?, ?)");
-                    stmt.setInt(1, 3);
-                    stmt.setString(2, newCard);
-                } catch (SQLException throwables) {
-                    throwables.printStackTrace();
+                    PreparedStatement stmt = conn.prepareStatement("insert into 'cards' values (?,?)");
+                    stmt.setInt(1, newCard.getTypeId());
+                    stmt.setString(2, newCard.getName());
+                    stmt.setInt(3, newCard.getCost());
+                    stmt.executeUpdate();
+                } catch (SQLException e) {
+                    System.err.println("Failed to insert: " + e.getMessage());
                 }
             }
         };
@@ -79,4 +89,7 @@ public class App {
         server.getServer().await();
     }
 }
+
+
+
 

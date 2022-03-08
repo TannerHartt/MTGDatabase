@@ -6,8 +6,13 @@
     <link rel="stylesheet" href="main.css">
 </head>
 <body>
-<h1>Welcome</h1>
-<div id="artists"></div>
-<script src="main.js"></script>
+    <h1>Welcome</h1>
+    <form action="/cards" method="post">
+        Id: <input type="number" name="typeId" id="typeId"/>
+        Name: <input type="text" name="name" id="name"/>
+        <button type="button" onclick="postCard()">Add Card</button>
+    </form>
+    <div id="cards"></div>
+    <script src="main.js"></script>
 </body>
 </html>
