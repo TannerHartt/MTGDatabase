@@ -8,7 +8,7 @@ function listCards(json) {
     return `${json.map(listCards).join('\n')}`;
 }
 
-let listCards = function(card) {
+let listCard = function(card) {
     return '<p>' + card.typeId + ": " + card.name + ": " + card.cost + '</p>';
 }
 
