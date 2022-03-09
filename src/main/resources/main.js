@@ -1,11 +1,12 @@
 var welcomeMsg = 'Hello, World!';
-
 document.querySelector('h1').innerText = welcomeMsg;
 
-fetch('/cards').then(resp => resp.json().then(cards => console.log(cards)));
+fetch('/cards').then(resp => resp.json()).then(cards => {
+    document.querySelector('#cards').innerHTML = listCards(cards);
+});
 
 function listCards(json) {
-    return `${json.map(listCards).join('\n')}`;
+    return `${json.map(listCard).join('\n')}`;
 }
 
 let listCard = function(card) {
@@ -37,3 +38,9 @@ function postCard() {
         }
     );
 }
+
+
+// let button = document.querySelector('button');
+// button.addEventListener('mouseenter',function() {
+//     button.textContent = "Go!";
+// })

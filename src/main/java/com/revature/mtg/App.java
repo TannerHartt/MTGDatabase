@@ -27,8 +27,6 @@ public class App {
 
 
         HttpServlet cardServlet = new HttpServlet() {
-
-
             @Override
             protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
                 List<Card> cards = new ArrayList<>();
