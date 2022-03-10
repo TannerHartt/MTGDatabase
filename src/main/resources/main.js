@@ -40,7 +40,7 @@ function postCard() {
 }
 
 
-// let button = document.querySelector('button');
-// button.addEventListener('mouseenter',function() {
-//     button.textContent = "Go!";
-// })
+let button = document.querySelector('button');
+button.addEventListener('mouseenter',function() {
+    button.textContent = "Go!";
+})
