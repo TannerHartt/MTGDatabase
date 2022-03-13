@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Home Page</title>
+    <link rel="icon" href="favicon.ico">
     <link rel="stylesheet" href="main.css">
 </head>
 <body>
@@ -10,9 +11,13 @@
     <form action="/cards" method="post">
         Id: <input type="number" name="typeId" id="typeId"/>
         Name: <input type="text" name="name" id="name"/>
-        <button type="button" onclick="postCard()">Add Card</button>
+        Mana Cost: <input type="number" name="cost" id="cost"/>
+        <button type="button" onsubmit="postCard()">Add Card</button>
     </form>
     <div id="cards"></div>
     <script src="main.js"></script>
 </body>
 </html>
+
+
+

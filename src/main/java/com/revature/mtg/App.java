@@ -51,7 +51,7 @@ public class App {
                 ObjectMapper mapper = new ObjectMapper();
                 Card newCard = mapper.readValue(req.getInputStream(), Card.class);
                 try {
-                    PreparedStatement stmt = conn.prepareStatement("insert into 'cards' values (?,?)");
+                    PreparedStatement stmt = conn.prepareStatement("insert into cards values (?,?,?)");
                     stmt.setInt(1, newCard.getTypeId());
                     stmt.setString(2, newCard.getName());
                     stmt.setInt(3, newCard.getCost());
@@ -61,8 +61,6 @@ public class App {
                 }
             }
         };
-
-
         // Run server
         Tomcat server = new Tomcat();
         server.setPort(8080);
@@ -74,9 +72,14 @@ public class App {
                 String filename = req.getPathInfo();
                 String resourceDir = "static";
                 InputStream file = getClass().getClassLoader().getResourceAsStream(resourceDir + filename);
-                String mimeType = getServletContext().getMimeType(filename);
-                resp.setContentType(mimeType);
-                IOUtils.copy(file, resp.getOutputStream());
+                if(filename.equals("")) filename = "static/index.html";
+                if (file == null) {
+                    filename = "static/index.html";
+                } else {
+                    String mimeType = getServletContext().getMimeType(filename);
+                    resp.setContentType(mimeType);
+                    IOUtils.copy(file, resp.getOutputStream());
+                }
             }
         }).addMapping("/*");
         server.addServlet("","cardServlet", cardServlet).addMapping("/cards");
@@ -88,7 +91,6 @@ public class App {
         } catch (LifecycleException e) {
             System.err.println("Failed to start server: " + e.getMessage());
         }
-        server.getServer().await();
     }
 }
 

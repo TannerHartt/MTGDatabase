@@ -10,6 +10,10 @@ public class Card {
         this.typeId = typeId;
         this.cost = cost;
     }
+    public Card(String name, int typeId){
+        this.name = name;
+        this.typeId = typeId;
+    }
 
     @Override
     public String toString() {
@@ -17,7 +21,7 @@ public class Card {
                 "name='" + name + '\'' +
                 ", typeId=" + typeId +
                 ", cost=" + cost +
-                '}';
+                '}' + "\n";
     }
 
     public int getCost() {

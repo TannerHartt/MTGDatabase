@@ -1,4 +1,4 @@
-var welcomeMsg = 'Hello, World!';
+var welcomeMsg = 'Magic the Gathering Database';
 document.querySelector('h1').innerText = welcomeMsg;
 
 fetch('/cards').then(resp => resp.json()).then(cards => {
@@ -28,7 +28,7 @@ function postCard() {
         },
         body: JSON.stringify(card)
     }).then((result) => {
-        if (result.status != 200) {
+        if (result.status !== 200) {
             throw new Error("Bad Server Response");
         }
         console.log(result.text());
@@ -36,11 +36,11 @@ function postCard() {
     fetch('/cards').then(resp => resp.json()).then(cards => {
             document.querySelector('#cards').innerHTML = listCards(cards);
         }
-    );
+    )
 }
 
 
-let button = document.querySelector('button');
-button.addEventListener('mouseenter',function() {
-    button.textContent = "Go!";
-})
+// let button = document.querySelector('button');
+// button.addEventListener('mouseenter',function() {
+//     button.textContent = "Go!";
+// })
