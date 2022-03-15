@@ -16,8 +16,8 @@ let listCard = function(card) {
 function postCard() {
     let card = {
         "typeId": document.getElementById("typeId").value,
-        "name": document.getElementById("name").value,
-        "cost": document.getElementById("cost").value
+        "cost": document.getElementById("cost").value,
+        "name": document.getElementById("name").value
     }
     console.log(card);
     fetch("/cards", {
