@@ -1,6 +1,6 @@
 CREATE TABLE "cards" (
     "TypeId" INT PRIMARY KEY NOT NULL,
-    "ManaCost" INT NOT NULL,
+    "ManaCost" VARCHAR,
     "Name" VARCHAR
 );
 

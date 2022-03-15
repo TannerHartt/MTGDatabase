@@ -18,7 +18,10 @@ public class App {
 
     public static void main(String[] args) throws SQLException {
         // Connect to DB
-        Connection conn = DriverManager.getConnection("jdbc:h2:mem:test;MODE=PostgreSQL;DATABASE_TO_LOWER=TRUE;INIT=runscript from 'classpath:schema.sql'", "sa", "");
+        String url = "jdbc:h2:mem:test";
+        String username = "sa";
+        String password = "";
+        Connection conn = DriverManager.getConnection(url,username,password);
         ResultSet rs = conn.prepareStatement("select * from cards").executeQuery();
         List<String> cards = new ArrayList<>();
         while (rs.next()) {
@@ -61,36 +64,69 @@ public class App {
                 }
             }
         };
+
         // Run server
         Tomcat server = new Tomcat();
-        server.setPort(8080);
+        server.setBaseDir("java.io.tmpdir");
+        server.setPort(0);
         server.getConnector();
         server.addContext("", null);
-        server.addServlet("", "defaultServlet", new HttpServlet() {
-            @Override
-            protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-                String filename = req.getPathInfo();
-                String resourceDir = "static";
-                InputStream file = getClass().getClassLoader().getResourceAsStream(resourceDir + filename);
-                if(filename.equals("")) filename = "static/index.html";
-                if (file == null) {
-                    filename = "static/index.html";
-                } else {
-                    String mimeType = getServletContext().getMimeType(filename);
-                    resp.setContentType(mimeType);
-                    IOUtils.copy(file, resp.getOutputStream());
-                }
-            }
-        }).addMapping("/*");
+        server.addServlet("", "defaultServlet", new DefaultServlet()).addMapping("/*");
         server.addServlet("","cardServlet", cardServlet).addMapping("/cards");
 
         try {
             server.start();
-            System.out.println("Server is running on http://localhost:" + server.getConnector().getLocalPort() + "/cards");
+            System.out.println("Server is running on http://localhost:" + server.getConnector().getLocalPort() + "/index.html");
             server.getServer().await();
         } catch (LifecycleException e) {
             System.err.println("Failed to start server: " + e.getMessage());
         }
+    }
+}
+ class Card {
+    private String name;
+    private int typeId;
+    private int cost;
+
+    public Card(String name, int typeId, int cost) {
+        this.name = name;
+        this.typeId = typeId;
+        this.cost = cost;
+    }
+    public Card(String name, int typeId){
+        this.name = name;
+        this.typeId = typeId;
+    }
+
+    @Override
+    public String toString() {
+        return "Card{" +
+                "name='" + name + '\'' +
+                ", typeId=" + typeId +
+                ", cost=" + cost +
+                '}';
+    }
+
+    public int getCost() {
+        return cost;
+    }
+    public void setCost(int cost) {
+        this.cost = cost;
+    }
+    public int getTypeId() {
+        return typeId;
+    }
+    public void setTypeId(int typeId) {
+        this.typeId = typeId;
+    }
+    public String getName() {
+        return name;
+    }
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Card() {
     }
 }
 

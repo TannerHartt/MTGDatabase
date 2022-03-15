@@ -2,7 +2,7 @@ var welcomeMsg = 'Magic the Gathering Database';
 document.querySelector('h1').innerText = welcomeMsg;
 
 fetch('/cards').then(resp => resp.json()).then(cards => {
-    document.querySelector('#cards').innerHTML = listCards(cards);
+    document.querySelector('#cardsDiv').innerHTML = listCards(cards);
 });
 
 function listCards(json) {
@@ -36,7 +36,8 @@ function postCard() {
     fetch('/cards').then(resp => resp.json()).then(cards => {
             document.querySelector('#cards').innerHTML = listCards(cards);
         }
-    )
+    );
+    window.document.location.reload();
 }
 
 

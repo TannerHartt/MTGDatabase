@@ -15,14 +15,21 @@ repositories {
 }
 
 dependencies {
+    implementation 'com.zaxxer:HikariCP:5.0.1'
     implementation 'org.postgresql:postgresql:42.3.3'
     implementation 'com.h2database:h2:2.1.210'
-    implementation 'com.fasterxml.jackson.core:jackson-databind:2.13.1'
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.13.2'
     implementation 'org.apache.tomcat.embed:tomcat-embed-core:10.1.0-M11'
-    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
-    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.2'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.2'
 }
 
 test {
     useJUnitPlatform()
 }
+
+
+
+/* Commands:
+        ssh -i .\Downloads\p1-Tanner_key.pem azureuser@20.228.188.10
+ */
