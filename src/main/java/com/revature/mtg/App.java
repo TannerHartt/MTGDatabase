@@ -18,7 +18,7 @@ public class App {
 
     public static void main(String[] args) throws SQLException {
         // Connect to DB
-        String url = "jdbc:h2:mem:test";
+        String url = "jdbc:h2:mem:test;MODE=PostgreSQL;DATABASE_TO_LOWER=TRUE;INIT=runscript from 'classpath:schema.sql'";
         String username = "sa";
         String password = "";
         Connection conn = DriverManager.getConnection(url,username,password);
