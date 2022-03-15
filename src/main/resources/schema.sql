@@ -15,7 +15,7 @@ CREATE TABLE "cards" (
 -- CREATE INDEX "IFK_TypesId" ON "types" ("TypeId");
 
 INSERT INTO "cards" VALUES (1,5,'Naomi Pillar of Order');
-INSERT INTO "cards" VALUES (2,3,'Satoru Umezawa');
+INSERT INTO "cards" VALUES (2,1,'Fading Hope');
 INSERT INTO "cards" VALUES (3,2,'Sol Ring');
 
 
