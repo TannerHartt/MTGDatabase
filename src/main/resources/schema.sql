@@ -19,5 +19,4 @@ INSERT INTO "cards" VALUES (2,1,'Fading Hope');
 INSERT INTO "cards" VALUES (3,2,'Sol Ring');
 
 
-
 -- INSERT INTO "types" VALUES (1,'Creature');

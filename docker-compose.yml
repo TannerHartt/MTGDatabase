@@ -13,6 +13,7 @@ services:
     image: mtgdex
     depends_on:
       - p1-db
+    restart: on-failure
     build:
       context: .
       dockerfile: ./Dockerfile
