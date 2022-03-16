@@ -6,7 +6,6 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-
 import java.io.IOException;
 import java.sql.*;
 import java.util.ArrayList;
@@ -19,8 +18,7 @@ public class CardServlet extends HttpServlet {
     String username = "sa";
     String password = "";
 
-    // Postgres connection info
-
+    // Postgres' connection info:
     //String url = "jdbc:postgresql//localhost:5432/postgres";
     //String username = "sa";
     //String password = "";
@@ -34,6 +32,13 @@ public class CardServlet extends HttpServlet {
         }
     }
 
+    /**
+     * Servlet set up to display
+     * @param req http request sent from the server.
+     * @param resp printing/sending the response to the server to display on the webpage.
+     * @throws ServletException if this error occurs, it throws the error back to the calling method rather than handling it here.
+     * @throws IOException if this error occurs, it throws it back to the method that called it.
+     */
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         List<Card> cards = new ArrayList<>();
@@ -43,7 +48,6 @@ public class CardServlet extends HttpServlet {
                 Card cardToAdd = new Card(rs.getInt("TypeId"),rs.getInt("ManaCost"),rs.getString("Name"));
                 cards.add(cardToAdd);
             }
-
         } catch (SQLException e) {
             System.err.println("Failed to retrieve from database: " + e.getSQLState());
         }
@@ -54,6 +58,13 @@ public class CardServlet extends HttpServlet {
         resp.getWriter().println(results);
     }
 
+    /**
+     * An override method set up to insert data into the memory database by the user. Used for "Add Card" functionality.
+     * @param req a http request sent from the server to insert the specified fields into the database table.
+     * @param resp a http response to the server, adding the fields to the table and printing them to the server.
+     * @throws ServletException if this error occurs, it throws the error back to the calling method rather than handling it here.
+     * @throws IOException if this error occurs, it throws it back to the method that called it.
+     */
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         ObjectMapper mapper = new ObjectMapper();

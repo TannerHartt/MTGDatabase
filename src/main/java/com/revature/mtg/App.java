@@ -11,7 +11,7 @@ public class App {
 
     public static void main(String[] args) throws SQLException {
 
-        // Run server
+        // Run server and added mappings
         Tomcat server = new Tomcat();
         server.setBaseDir("java.io.tmpdir");
         server.setPort(8080);

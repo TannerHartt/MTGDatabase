@@ -8,9 +8,9 @@ fetch('/cards').then(resp => resp.json()).then(cards => {
 function listCards(json) {
     return `${json.map(listCard).join('\n')}`;
 }
-
+// lists the cards in the database to the screen
 let listCard = function(card) {
-    return '<p>' + card.typeId + ": " + card.name + ": " + card.cost + '</p>';
+    return '<p>' + card.typeId + ": " + card.cost + ": " + card.name + '</p>';
 }
 
 function postCard() {
@@ -40,6 +40,7 @@ function postCard() {
     window.document.location.reload();
 }
 
+// Creates the mouse hover event to the add card/insert button
 let button = document.querySelector('button');
     button.addEventListener('mouseover',function() {
             button.textContent = "insert";

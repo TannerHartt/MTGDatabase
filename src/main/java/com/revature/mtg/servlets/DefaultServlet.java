@@ -5,12 +5,18 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import org.apache.tomcat.util.http.fileupload.IOUtils;
-
 import java.io.IOException;
 import java.io.InputStream;
 
 public class DefaultServlet extends HttpServlet {
 
+    /**
+     * Default servlet set up to redirect any incorrect input to the index.html file, regardless of input.
+     * @param req http request sent from the server. This includes switching files, adding data, or navigating menus.
+     * @param resp printing the response to the server.
+     * @throws ServletException if this error occurs, it throws the error back to the calling method.
+     * @throws IOException if this error occurs, it throws it back to the method that called it.
+     */
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String filename = req.getPathInfo();

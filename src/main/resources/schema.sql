@@ -14,9 +14,12 @@ CREATE TABLE "cards" (
 --
 -- CREATE INDEX "IFK_TypesId" ON "types" ("TypeId");
 
-INSERT INTO "cards" VALUES (1,5,'Naomi Pillar of Order');
+INSERT INTO "cards" VALUES (1,5,'Naomi, Pillar of Order');
 INSERT INTO "cards" VALUES (2,1,'Fading Hope');
 INSERT INTO "cards" VALUES (3,2,'Sol Ring');
-
+INSERT INTO "cards" VALUES (4,8,'Ugin, the Spirit Dragon');
+INSERT INTO "cards" VALUES (5,1,'Ruin Crab');
+INSERT INTO "cards" VALUES (6,2,'Maddening Cacophony');
+INSERT INTO "cards" VALUES (7,3,'Greasefang, Okiba Boss');
 
 -- INSERT INTO "types" VALUES (1,'Creature');

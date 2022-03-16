@@ -3,14 +3,16 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
 }
+/*Creates a glassy background gradient for the table and insert button */
 .glass{
     background: linear-gradient(135deg,rgba(255,255,255,0.3),rgba(255,255,255,0));
     backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(10px);
     border-radius: 10px;
-    border: 5px solid rgba(255, 255, 255, .2);
+    border: 5px solid rgba(255, 255, 255, .3);
     box-shadow: 0 8px 32px 0 rgba(0,0,0,0.37);
 }
+
 .outerbox{
     width:250px;height:40px;text-align:left;
     border-color:purple;
@@ -20,10 +22,20 @@ body {
     padding-left:10px;
     padding-top:5px;
     padding-bottom:5px;
-    vertical-align:bottom;
+    border-radius:10px;
 }
-.greenButton {
-    background-color: dodgerblue;
+.innerbox {
+    border:none;
+    width:200px;
+    height:40px;
+    background-color:#F6B6FF;
+    font-weight: bold;
+    font-size: 18pt;
+}
+
+/* Creates a simple blue background */
+.blueButton {
+    background-color: #0641e7;
     color: white;
     padding: 14px 20px;
     margin: 8px 0;
@@ -32,12 +44,7 @@ body {
     width: 7%;
 }
 
-
-
-
-
-
-
+/* Unfinished border gradient hover animation */
 .btn::before,
 .btn::after {
     content: "";
@@ -58,6 +65,7 @@ body {
     transform: scale(1.1);
 }
 
+/* Simple slider animation */
 .slider {
     -webkit-appearance: none;
     width: 60%;
