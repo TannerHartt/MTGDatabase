@@ -13,6 +13,9 @@ body {
     box-shadow: 0 8px 32px 0 rgba(0,0,0,0.37);
 }
 
+div.contents { display:block; margin:auto; text-align:center;}
+div#cardsDiv {text-align:left; width:max-content; margin:auto; font-weight:bold; font-size:18pt;}
+
 .outerbox{
     width:250px;height:40px;text-align:left;
     border-color:purple;

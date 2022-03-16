@@ -1,4 +1,4 @@
-var welcomeMsg = 'Magic the Gathering Database';
+let welcomeMsg = 'Magic the Gathering Database';
 document.querySelector('h1').innerText = welcomeMsg;
 
 fetch('/cards').then(resp => resp.json()).then(cards => {
