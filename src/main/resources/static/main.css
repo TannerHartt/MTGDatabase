@@ -1,15 +1,79 @@
 body {
     background-image: url('background.jpg');
     background-repeat: no-repeat;
-    background-color: aqua;
     background-size: cover;
 }
-
 .glass{
-    background: linear-gradient(135deg,rgba(255,255,255,0.1),rgba(255,255,255,0));
+    background: linear-gradient(135deg,rgba(255,255,255,0.3),rgba(255,255,255,0));
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(5px);
     border-radius: 10px;
-    border: 5px solid rgba(255,255,255,0.18);
+    border: 5px solid rgba(255, 255, 255, .2);
     box-shadow: 0 8px 32px 0 rgba(0,0,0,0.37);
+}
+.outerbox{
+    width:250px;height:40px;text-align:left;
+    border-color:purple;
+    border-style:solid;
+    border-width: 2px;
+    margin:auto;
+    padding-left:10px;
+    padding-top:5px;
+    padding-bottom:5px;
+    vertical-align:bottom;
+}
+.greenButton {
+    background-color: dodgerblue;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 7%;
+}
+
+
+
+
+
+
+
+.btn::before,
+.btn::after {
+    content: "";
+    display: block;
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+}
+.btn::after {
+    background-color: #292929;
+}
+.btn::before {
+    background-image: linear-gradient(to bottom right, #aeffb9 0%, #a091ff 100%);
+    transition: transform 100ms;
+}
+.btn:hover::before,
+.btn:focus::before {
+    transform: scale(1.1);
+}
+
+.slider {
+    -webkit-appearance: none;
+    width: 60%;
+    height: 6px;
+    border-radius: 3px;
+    background: #2b2d32;
+}
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #d8d7d7;
+    border: 4px solid #1d1e22;
+    transition: all 0.3s ease;
+}
+.slider::-webkit-slider-thumb:hover {
+    transform: scale(1.2);
 }

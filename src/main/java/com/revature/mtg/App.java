@@ -1,5 +1,7 @@
 package com.revature.mtg;
 
+import com.revature.mtg.servlets.CardServlet;
+import com.revature.mtg.servlets.DefaultServlet;
 import org.apache.catalina.LifecycleException;
 import org.apache.catalina.startup.Tomcat;
 import java.sql.*;
