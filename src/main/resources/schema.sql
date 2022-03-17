@@ -4,14 +4,14 @@ CREATE TABLE "cards" (
     "Name" VARCHAR NOT NULL
 );
 
--- CREATE TABLE "types" (
---     "TypeId" INT NOT NULL,
---     "Type" VARCHAR NOT NULL,
---
---     CONSTRAINT "PK_Type" PRIMARY KEY ("TypeId"),
---     CONSTRAINT "FK_TypesId" FOREIGN KEY ("TypeId") REFERENCES "cards" ("TypeId") ON DELETE NO ACTION ON UPDATE NO ACTION
--- );
---
+CREATE TABLE "types" (
+    "TypeId" INT NOT NULL,
+    "Type" VARCHAR NOT NULL,
+
+    CONSTRAINT "PK_Type" PRIMARY KEY ("TypeId"),
+    CONSTRAINT "FK_TypesId" FOREIGN KEY ("TypeId") REFERENCES "cards" ("TypeId") ON DELETE NO ACTION ON UPDATE NO ACTION
+);
+
 -- CREATE INDEX "IFK_TypesId" ON "types" ("TypeId");
 
 INSERT INTO "cards" VALUES (1,5,'Naomi, Pillar of Order');

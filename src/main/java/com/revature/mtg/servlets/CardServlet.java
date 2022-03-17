@@ -33,7 +33,7 @@ public class CardServlet extends HttpServlet {
     }
 
     /**
-     * Servlet set up to display
+     * Servlet set up to display the contents of the database to the server. Prints and sets content type as raw JSON data.
      * @param req http request sent from the server.
      * @param resp printing/sending the response to the server to display on the webpage.
      * @throws ServletException if this error occurs, it throws the error back to the calling method rather than handling it here.

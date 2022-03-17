@@ -1,5 +1,6 @@
 package com.revature.mtg;
 
+import com.revature.mtg.servlets.AddCard;
 import com.revature.mtg.servlets.CardServlet;
 import com.revature.mtg.servlets.DefaultServlet;
 import org.apache.catalina.LifecycleException;
@@ -19,9 +20,12 @@ public class App {
         server.addContext("", null);
         server.addServlet("", "defaultServlet", new DefaultServlet()).addMapping("/*");
         server.addServlet("","cardServlet", new CardServlet()).addMapping("/cards");
+        server.addServlet("", "addCard", new AddCard()).addMapping("/addCard");
 
         try {
             server.start();
+            System.out.println("Server is running on http://localhost:" + server.getConnector().getLocalPort() + "/addCard.html");
+            System.out.println();
             System.out.println("Server is running on http://localhost:" + server.getConnector().getLocalPort() + "/index.html");
             server.getServer().await();
         } catch (LifecycleException e) {

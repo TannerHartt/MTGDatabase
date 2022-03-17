@@ -12,6 +12,9 @@ function listCards(json) {
 let listCard = function(card) {
     return '<p>' + card.typeId + ": " + card.cost + ": " + card.name + '</p>';
 }
+function addCardButton(goToUrl) {
+    window.location.href=goToUrl;
+}
 
 function postCard() {
     let card = {

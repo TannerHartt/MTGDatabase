@@ -17,7 +17,7 @@
 //
 //        try {
 //            server.start();
-//            System.out.println("Server is running on http://localhost:" + server.getConnector().getLocalPort() + "/index.html");
+//            System.out.println("Server is running on http://localhost:" + server.getConnector().getLocalPort() + "/addCard.html");
 //            server.getServer().await();
 //        } catch (LifecycleException e) {
 //        System.err.println("Failed to start server: " + e.getMessage());
