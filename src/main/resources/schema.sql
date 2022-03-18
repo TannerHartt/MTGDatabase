@@ -32,6 +32,7 @@ INSERT INTO "cards" VALUES (13,'WUBRG','Sanctum of All','Johannes Voss',488280);
 INSERT INTO "cards" VALUES (14,'GW','Satsuki, the Living Lore','domco',552273);
 INSERT INTO "cards" VALUES (15,'3GGUU','Koma, Cosmos Serpent','Jesper Ejsing',503837);
 INSERT INTO "cards" VALUES (16,'5BR','Tibalt, Cosmic Imposter','Grzegorz Rutkowski',507137);
+INSERT INTO "cards" VALUES (17,'1WB','Greasefang, Okiba Boss','Victor Adame Minguez',551765);
 
 
 -- INSERT INTO "types" VALUES (1,'Creature');

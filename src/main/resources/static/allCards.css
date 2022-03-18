@@ -16,18 +16,9 @@ img.logo { display:block; margin:auto; }
 
 /*#231c29,#431e3f (the purple)  #5979a0,#7fa1ba (the blue)*/
 div.contents { display:block; margin:auto; text-align:center;}
-div.midContents { display:block; width:max-content; padding:5px;
-    margin: 10% auto auto;
-}
+div.midContents { display:block; width:max-content; padding:5px;margin: 10% auto auto;}
 div.cardsDivClass { text-align:center;}
 
-/*div#cardsDiv {*/
-/*    text-align:center;*/
-/*    width:max-content;*/
-/*    margin:auto;*/
-/*    font-weight:bold;*/
-/*    font-size:18pt;*/
-/*}*/
 div#cardsDiv {
     text-align:center;
     margin:auto;
@@ -41,12 +32,8 @@ div#cardsDiv {
 
 div.adminButtons { position:absolute; bottom:5px; left:5px; }
 div.pageBottom { background-color:#090930; position:absolute; height:300px; width:100%; bottom:-300px;}
-
-
 button.button { width:150px; height:35px; border-color:#dfdcc9; border-style:solid; background-color:#85a5ba; font-weight:bolder;}
 button.mainMenu { height:50px; width:200px; padding:5px; background-color:#294970; color:#7fa1ba; border-radius:40px; font-size:16pt; }
-
-
 td.rj { text-align: right; }
 td.center { display:table-cell; text-align:center; }
 

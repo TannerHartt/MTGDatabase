@@ -20,20 +20,27 @@
                 </form>
             </table>
         </div><br>
-        <button class="glass" type="button" onclick="randomCardButton('/randomCard')">Random Card</button>&nbsp;&nbsp;&nbsp;
-        <button class="glass" type="button" onclick="allCardsButton('/allCards')">All Cards</button>&nbsp;&nbsp;&nbsp;
-        <button class="glass" type="button" onclick="addCardButton('/addCard')">Add a Card</button>
+        <button class="glass" type="button" onclick="goToButton('/randomCard')">Random Card</button>&nbsp;&nbsp;&nbsp;
+        <button class="glass" type="button" onclick="goToButton('/allCards')">All Cards</button>&nbsp;&nbsp;&nbsp;
+        <button class="glass" type="button" onclick="goToButton('/addCard')">Add a Card</button>
     </div>
 
-    <div class="adminButtons">
-        <button class="glass" type="button" onclick="rawDataButton('/cards')">See Raw Data</button>
-        <button class="glass" type="button">View Logging</button>
-    </div>
-        <div class="container" >
-            <input type="checkbox" name="" id="">
+        <canvas id="adminButtons" class="adminButtons" height="200" width="200" onmouseout="CheckMenuStatus()">
+            <img id="settingsImage" src="http://agamedesigner.info/settings.png" height="44" width="44">
+            <img style="cursor:pointer" id="rawDataImage" src="http://agamedesigner.info/rawDataImage.png">
+            <img id="loggingImage" src="http://agamedesigner.info/loggingButtonImage.png">
+        </canvas>
+<!--    <div class="adminButtons">-->
+<!--        <button class="glass" type="button" onclick="goToButton('/cards')">See Raw Data</button>-->
+<!--        <button class="glass" type="button">View Logging</button>-->
+<!--    </div>-->
+        <div class="container">
+            <input type="checkbox" name="" id="" onclick="myFunction()">
         </div>
+        <div class="pageBottom"></div>
     </div>
     <div class="pageBottom"></div>
     <script src="addCard.js"></script>
+    <script src="anim.js"></script>
 </body>
 </html>

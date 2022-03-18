@@ -10,20 +10,15 @@ function listCards(json) {
 }
 // lists the cards in the database to the screen
 let listCard = function(card) {
-    return '<p>' + card.typeId + ": " + card.cost + ": " + card.name + ": " + card.artist + ": " + card.multiverse + '</p>';
+    // return '<p>' + card.typeId + ": " + card.cost + ": " + card.name + ": " + card.artist + ": " + card.multiverse + '</p>';
 }
-function addCardButton(goToUrl) {
+function goToButton(goToUrl) {
     window.location.href=goToUrl;
 }
-function allCardsButton(goToUrl) {
-    window.location.href=goToUrl;
+function myFunction() {
+    document.body.style.backgroundColor = "black";
 }
-function rawDataButton(goToUrl) {
-    window.location.href=goToUrl;
-}
-function randomCardButton(goToUrl) {
-    window.location.href=goToUrl;
-}
+
 
 function postCard() {
     let card = {
@@ -60,3 +55,6 @@ let button = document.querySelector('button');
     button.addEventListener('mouseout',function() {
         button.textContent="Add Card";
     })
+
+
+
