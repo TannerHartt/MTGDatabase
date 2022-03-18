@@ -10,9 +10,18 @@ function listCards(json) {
 }
 // lists the cards in the database to the screen
 let listCard = function(card) {
-    return '<p>' + card.typeId + ": " + card.cost + ": " + card.name + '</p>';
+    return '<p>' + card.typeId + ": " + card.cost + ": " + card.name + ": " + card.artist + ": " + card.multiverse + '</p>';
 }
 function addCardButton(goToUrl) {
+    window.location.href=goToUrl;
+}
+function allCardsButton(goToUrl) {
+    window.location.href=goToUrl;
+}
+function rawDataButton(goToUrl) {
+    window.location.href=goToUrl;
+}
+function randomCardButton(goToUrl) {
     window.location.href=goToUrl;
 }
 
