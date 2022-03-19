@@ -7,7 +7,6 @@ public class Card {
     private String artist;
     private long multiverse;
 
-
     public Card(int typeId, String cost, String name, String artist, long multiverse) {
         this.typeId = typeId;
         this.cost = cost;
@@ -30,11 +29,9 @@ public class Card {
     public int getTypeId() {
         return typeId;
     }
-
     public void setTypeId(int typeId) {
         this.typeId = typeId;
     }
-
     public String getCost() {
         return cost;
     }

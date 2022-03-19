@@ -11,6 +11,13 @@ div.outerContents {
     background-image:linear-gradient(#5979a0,#7fa1ba);
     margin: auto;
 }
+div#outerContents {
+    display: block;
+    width: 100vw;
+    height: 100vh;
+    background-image: linear-gradient(#4a00e0,#7fa1ba);
+    margin: auto;
+}
 
 img.logo { display:block; margin:auto; }
 
@@ -23,7 +30,6 @@ div#cardsDiv {
     text-align:center;
     margin:auto;
     font-size:18pt;
-    overflow-y:scroll;
     overflow-x: hidden;
     width: 1200px;
     height: 750px;

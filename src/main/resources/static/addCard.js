@@ -10,15 +10,15 @@ function listCards(json) {
 }
 // lists the cards in the database to the screen
 let listCard = function(card) {
-    // return '<p>' + card.typeId + ": " + card.cost + ": " + card.name + ": " + card.artist + ": " + card.multiverse + '</p>';
+    return '<p>' + card.typeId + ": " + card.cost + ": " + card.name + ": " + card.artist + ": " + card.multiverse + '</p>';
 }
 function goToButton(goToUrl) {
     window.location.href=goToUrl;
 }
+
 function myFunction() {
     document.body.style.backgroundColor = "black";
 }
-
 
 function postCard() {
     let card = {
