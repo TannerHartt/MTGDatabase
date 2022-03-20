@@ -6,13 +6,15 @@ public class Card {
     private String name;
     private String artist;
     private long multiverse;
+    private String rarity;
 
-    public Card(int typeId, String cost, String name, String artist, long multiverse) {
+    public Card(int typeId, String cost, String name, String artist, long multiverse, String rarity) {
         this.typeId = typeId;
         this.cost = cost;
         this.name = name;
         this.artist = artist;
         this.multiverse = multiverse;
+        this.rarity = rarity;
     }
 
     @Override
@@ -23,6 +25,7 @@ public class Card {
                 ", name='" + name + '\'' +
                 ", artist='" + artist + '\'' +
                 ", multiverse=" + multiverse +
+                ", rarity=" + rarity +
                 '}';
     }
 
@@ -56,6 +59,9 @@ public class Card {
     public void setMultiverse(long multiverse) {
         this.multiverse = multiverse;
     }
+    public String getRarity() {return rarity;}
+    public void setRarity(String rarity) {this.rarity = rarity;}
+
     public Card() {
     }
 }

@@ -82,13 +82,15 @@ function mouseClick(evt) {
     else if (!imageClicked && animFinished && (mouseX >= logImgLeft && mouseX <= logImgRight) && (mouseY >= logImgTop && mouseY <= logImgBottom))
         document.body.style.cursor = "pointer"; // if mouse is hovering over the Logging icon.
 }
+function goToButton(goToUrl) {
+    window.location.href=goToUrl;
+}
 
 window.onload = function() {
     canvas = document.getElementById('adminButtons');
     ctx = canvas.getContext("2d");
 
     let img2 = document.getElementById("settingsImage");
-
     let fps = 30;
     setInterval(imageReset, 1000/fps);
 
@@ -109,7 +111,7 @@ function imageReset() {
 }
 
 function ColorRect (leftX, topY, boxWidth, boxHeight, fillColor) {
-    if (fillColor != "Clear") {
+    if (fillColor !== "Clear") {
         ctx.fillStyle = fillColor;
         ctx.fillRect(leftX, topY, boxWidth, boxHeight);
     } else
