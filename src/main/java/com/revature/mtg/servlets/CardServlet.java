@@ -48,7 +48,8 @@ public class CardServlet extends HttpServlet {
                 Card cardToAdd = new Card(rs.getInt("TypeId"),rs.getString("ManaCost"),rs.getString("Name"),
                         rs.getString("Artist"),
                         rs.getLong("Multiverse"),
-                        rs.getString("Rarity"));
+                        rs.getString("Rarity"),
+                        rs.getString("scryfallId"));
                 cards.add(cardToAdd);
             }
         } catch (SQLException e) {
@@ -73,13 +74,14 @@ public class CardServlet extends HttpServlet {
         ObjectMapper mapper = new ObjectMapper();
         Card newCard = mapper.readValue(req.getInputStream(), Card.class);
         try {
-            PreparedStatement stmt = conn.prepareStatement("insert into cards values (?,?,?,?,?,?)");
+            PreparedStatement stmt = conn.prepareStatement("insert into cards values (?,?,?,?,?,?,?)");
             stmt.setInt(1, newCard.getTypeId());
             stmt.setString(2, newCard.getCost());
             stmt.setString(3, newCard.getName());
             stmt.setString(4, newCard.getArtist());
             stmt.setLong(5, newCard.getMultiverse());
             stmt.setString(6, newCard.getRarity());
+            stmt.setString(7, newCard.getScryfallId());
             stmt.executeUpdate();
         } catch (SQLException e) {
             System.err.println("Failed to insert: " + e.getMessage());
