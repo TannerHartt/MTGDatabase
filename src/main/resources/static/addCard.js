@@ -113,8 +113,8 @@ function goToButton(goToUrl) {
 }
 
 
-function postCard() {
-    let card = {
+function postSearch() {
+    let searchURL = {
         "typeId": document.getElementById("typeId").value,
         "cost": document.getElementById("cost").value,
         "name": document.getElementById("name").value
@@ -134,7 +134,7 @@ function postCard() {
         console.log(result.text());
     }).catch((error) => { console.log(error); })
     fetch('/cards').then(resp => resp.json()).then(cards => {
-            document.querySelector('#cards').innerHTML = listCards(cards);
+            document.querySelector('#cardsDiv').innerHTML = listCards(cards);
         }
     );
     window.document.location.reload();

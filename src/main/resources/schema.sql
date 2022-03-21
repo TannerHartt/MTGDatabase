@@ -98,7 +98,23 @@ INSERT INTO "cards" VALUES (66,'2WR','Proud Wildbonder','Dmitry Burmak',479749,2
 INSERT INTO "cards" VALUES (67,'3R','Pyroceratops','Jason A. Engle',479650,1,'f6599645-dbb5-4174-bd26-8556af6d89c3');
 INSERT INTO "cards" VALUES (68,'2RRG','Quartzwood Crasher','Antonio Jose Manzanedo',479721,3,'c8e4c609-19c9-433b-a852-7999e375ee4f');
 INSERT INTO "cards" VALUES (69,'1R','Raking Claws','Slawomir Maniak',479651,1,'6eb0d9a2-f9bb-4d8e-a1ca-896c42f8ad56');
--- INSERT INTO "cards" VALUES (7,'','','',mid,rar,'');
+INSERT INTO "cards" VALUES (70,'1G','Ram Through','Zoltan Boros',479690,1,'ac0b24e7-14e7-45ee-b5d8-bdb8674b669c');
+INSERT INTO "cards" VALUES (71,'L','Raugrin Triome','Jonas De Ro',479771,3,'02138fbb-3962-4348-8d31-faaefba0b8b2');
+INSERT INTO "cards" VALUES (72,'2UU','Reconnaissance Mission','Johannes Voss',479585,2,'b2364119-d764-4ef1-86cf-a0b7a5ae1b38');
+INSERT INTO "cards" VALUES (73,'RW','Regal Leosaur','Ilse Gort',479722,2,'b6fdf313-740b-4976-911f-9fb5eb54afce');
+INSERT INTO "cards" VALUES (74,'2R','Reptilian Reflection','Antonio Jose Manzanedo',479652,2,'7871b4dd-9085-4a3f-a1ae-9a292f73689b');
+INSERT INTO "cards" VALUES (75,'1UR','Rielle, the Everwise','Yongjae Choi',479723,4,'5f03c944-1929-4cb2-a373-d57eefa29ed1');
+INSERT INTO "cards" VALUES (76,'4R','Rooting Moloch','Andrey Kuzinskiy',479653,2,'cc2fd581-5cf8-4154-90dd-922afddcd556');
+INSERT INTO "cards" VALUES (77,'L','Rugged Highlands','Adam Paquette',479722,1,'58d511be-60e0-4755-abec-18eebb530605');
+INSERT INTO "cards" VALUES (78,'RRWWWBB','Ruinous Ultimatum','Chase Stone',479724,3,'50c1d6ca-7789-46b5-bc89-85cc3915cb85');
+INSERT INTO "cards" VALUES (79,'RW','Savai Thundermane','Svetlin Velinov',479725,2,'73d3925c-cf7d-4546-bc70-33f04d4b7566');
+INSERT INTO "cards" VALUES (80,'0','Black Lotus','Christopher Rush',9764,3,'4c85d097-e87b-41ee-93c6-0e54ec41b174');
+
+-- INSERT INTO "cards" VALUES (8,'','','',mid,rar,'');
+-- INSERT INTO "cards" VALUES (8,'','','',mid,rar,'');
+-- INSERT INTO "cards" VALUES (8,'','','',mid,rar,'');
+-- INSERT INTO "cards" VALUES (8,'','','',mid,rar,'');
+
 
 
 

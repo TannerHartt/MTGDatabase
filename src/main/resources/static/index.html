@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <title>MTG Database</title>
@@ -9,17 +9,25 @@
 <body>
     <div class="outerContents">
         <br><img class="logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Magicthegathering-logo.svg/512px-Magicthegathering-logo.svg.png?20160501122627/div">
-        <div class="midContents">
-            <div class="glass">
-            <table>
-                <form>
-                    <tr>
-                        <td><img src="http://agamedesigner.info/search.png"></td>
-                        <td><input class="innerbox" type="text"></td>
+        <form action="/search" method="get">
+            <div class="midContents">
+                <table>
+                    <tr class="searchRow">
+                        <td>
+                            <div class="glass">
+                                <table>
+                                    <tr>
+                                        <td><img src="http://agamedesigner.info/search.png"></td>
+                                        <td><input id="query" name="query" class="innerbox" type="text"></td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </td>
+                        <td>
+                            <input class="searchButton" type="submit" value="Search"><br><br><br>
+                        </td>
                     </tr>
-                </form>
-            </table>
-        </div><br>
+                </table>
         <button class="glass" type="button" onclick="goToButton('/randomCard')">Random Card</button>&nbsp;&nbsp;&nbsp;
         <button class="glass" type="button" onclick="goToButton('/allCards')">All Cards</button>&nbsp;&nbsp;&nbsp;
         <button class="glass" type="button" onclick="goToButton('/addCard')">Add a Card</button>
@@ -28,7 +36,7 @@
         <canvas id="adminButtons" class="adminButtons" height="200" width="200" onmouseout="CheckMenuStatus()">
             <img id="settingsImage" src="http://agamedesigner.info/settings.png" height="44" width="44">
             <img style="cursor:pointer" id="rawDataImage" src="http://agamedesigner.info/rawDataImage.png">
-            <img id="loggingImage" src="http://agamedesigner.info/loggingButtonImage.png">
+            <img id="loggingImage" src="http://agamedesigner.info/loggingButtonImage.png" onclick="goToButton('/log')">
         </canvas>
 
         <div class="container">

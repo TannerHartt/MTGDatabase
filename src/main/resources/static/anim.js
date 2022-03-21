@@ -80,10 +80,13 @@ function mouseClick(evt) {
     else if (!imageClicked && animFinished && (mouseX >= rawImgLeft && mouseX <= rawImgRight) && (mouseY >= rawImgTop && mouseY <= rawImgBottom))
         document.location.href="/cards"
     else if (!imageClicked && animFinished && (mouseX >= logImgLeft && mouseX <= logImgRight) && (mouseY >= logImgTop && mouseY <= logImgBottom))
-        document.body.style.cursor = "pointer"; // if mouse is hovering over the Logging icon.
+        document.location.href="/logs"; // if mouse is hovering over the Logging icon.
 }
 function goToButton(goToUrl) {
     window.location.href=goToUrl;
+}
+function goToGitHub() {
+    window.location.href= "https://github.com/TannerHartt";
 }
 
 window.onload = function() {
@@ -200,4 +203,39 @@ function reverseFly() {
         reverse = false;
         showingSettings = true;
     }
+}
+
+fetch('/cards').then(resp => resp.json()).then(cards => {
+    document.querySelector('#cardsDivIndex').innerHTML = listCards(cards);
+});
+
+function listCards(json) {
+    return `${json.map(listCard).join('\n')}`;
+}
+// lists the cards in the database to the screen by using the cards unique multiverse id in the url. Prints image of the card.
+let listCard = function(card) {
+    return '<a href="/viewCard.html?scryfallId='+card.scryfallId+'"><img src="https://gatherer.wizards.com/Handlers/Image.ashx?multiverseid='+card.multiverse+'&type=card"></a>';
+}
+
+function postSearch() {
+    let searchURL = { "searchQuery": document.getElementById("query").value }
+
+    fetch("/cards", {
+        method: "GET",
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(searchURL)
+    }).then((result) => {
+        if (result.status !== 200) {
+            throw new Error("Bad Server Response");
+        }
+        console.log(result.text());
+    }).catch((error) => { console.log(error); })
+    fetch('/cards').then(resp => resp.json()).then(cards => {
+            document.querySelector('#cardsDivIndex').innerHTML = listCards(cards);
+        }
+    );
+    window.document.location.reload();
 }
