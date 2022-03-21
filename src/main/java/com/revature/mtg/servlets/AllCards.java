@@ -10,6 +10,9 @@ import java.io.InputStream;
 
 public class AllCards extends HttpServlet {
 
+    /**
+     * Simple override method to set the /allCards end point to its corresponding html file.
+     */
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         InputStream filename = getClass().getClassLoader().getResourceAsStream("static/allCards.html");

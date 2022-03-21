@@ -10,8 +10,9 @@ import java.io.InputStream;
 
 public class RandomCard extends HttpServlet {
 
-    public RandomCard() {
-    }
+    /**
+     * Simple get method to set the page to the randomCard.html
+     */
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         InputStream filename = getClass().getClassLoader().getResourceAsStream("static/randomCard.html");

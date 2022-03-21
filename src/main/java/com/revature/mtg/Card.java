@@ -1,5 +1,8 @@
 package com.revature.mtg;
 
+/**
+ * Simple constructor class to set properties for each card and return them as a json.
+ */
 public class Card {
     private int cardId;
     private int typeId;
@@ -62,9 +65,7 @@ public class Card {
     public void setArtist(String artist) {
         this.artist = artist;
     }
-    public long getMultiverse() {
-        return multiverse;
-    }
+    public long getMultiverse() {return multiverse;}
     public void setMultiverse(long multiverse) {
         this.multiverse = multiverse;
     }
@@ -77,6 +78,5 @@ public class Card {
     public String getColorIdentity() {return colorIdentity;}
     public void setColorIdentity(String colorIdentity) {this.colorIdentity = colorIdentity;}
 
-    public Card() {
-    }
+    public Card() {}
 }

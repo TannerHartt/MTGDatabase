@@ -3,17 +3,10 @@ package com.revature.mtg;
 import com.revature.mtg.servlets.*;
 import org.apache.catalina.LifecycleException;
 import org.apache.catalina.startup.Tomcat;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
-
-import java.sql.*;
-
 
 public class App {
 
-
-    public static void main(String[] args) throws SQLException {
+    public static void main(String[] args) {
 
         // Run server and creates mappings
         Tomcat server = new Tomcat();
@@ -26,12 +19,7 @@ public class App {
         server.addServlet("", "addCard", new AddCard()).addMapping("/addCard");
         server.addServlet("","allCards", new AllCards()).addMapping("/allCards");
         server.addServlet("","randomCards", new RandomCard()).addMapping("/randomCard");
-//        server.addServlet("", "Logging", new LogPrint()).addMapping("/logs");
         server.addServlet("","Search", new SearchService()).addMapping("/search");
-
-//        Logger logger = LoggerFactory.getLogger(App.class);
-//        logger.info("This is an info level logging message");
-
 
         try {
             server.start();

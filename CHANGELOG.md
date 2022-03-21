@@ -101,3 +101,9 @@ Sunday, March 20:
 - Several minor quality improvements.
 - Added base image for card creation.
 - Code cleanup in all files.
+
+```
+Monday, Marth 21:
+```
+- Finished Javadocs throughout project.
+- 
