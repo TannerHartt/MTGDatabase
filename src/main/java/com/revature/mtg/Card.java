@@ -1,19 +1,23 @@
 package com.revature.mtg;
 
 public class Card {
+    private int cardId;
     private int typeId;
     private String cost;
     private String name;
     private String artist;
+    private String colorIdentity;
     private long multiverse;
     private String rarity;
     private String scryfallId;
 
-    public Card(int typeId, String cost, String name, String artist, long multiverse, String rarity, String scryfallId) {
+    public Card(int cardId, int typeId, String cost, String name, String artist, String colorIdentity, long multiverse, String rarity, String scryfallId) {
+        this.cardId = cardId;
         this.typeId = typeId;
         this.cost = cost;
         this.name = name;
         this.artist = artist;
+        this.colorIdentity = colorIdentity;
         this.multiverse = multiverse;
         this.rarity = rarity;
         this.scryfallId = scryfallId;
@@ -22,13 +26,15 @@ public class Card {
     @Override
     public String toString() {
         return "Card{" +
-                "typeId=" + typeId +
-                ", cost=" + cost +
+                "cardId=" + cardId +
+                ", typeId=" + typeId +
+                ", cost='" + cost + '\'' +
                 ", name='" + name + '\'' +
                 ", artist='" + artist + '\'' +
+                ", colorIdentity='" + colorIdentity + '\'' +
                 ", multiverse=" + multiverse +
-                ", rarity=" + rarity +
-                ", scryfallId=" + scryfallId +
+                ", rarity='" + rarity + '\'' +
+                ", scryfallId='" + scryfallId + '\'' +
                 '}';
     }
 
@@ -66,6 +72,10 @@ public class Card {
     public void setRarity(String rarity) {this.rarity = rarity;}
     public String getScryfallId() {return scryfallId;}
     public void setScryfallId(String scryfallId) {this.scryfallId = scryfallId;}
+    public int getCardId() {return cardId;}
+    public void setCardId(int cardId) {this.cardId = cardId;}
+    public String getColorIdentity() {return colorIdentity;}
+    public void setColorIdentity(String colorIdentity) {this.colorIdentity = colorIdentity;}
 
     public Card() {
     }

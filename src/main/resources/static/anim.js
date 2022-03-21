@@ -85,9 +85,6 @@ function mouseClick(evt) {
 function goToButton(goToUrl) {
     window.location.href=goToUrl;
 }
-function goToGitHub() {
-    window.location.href= "https://github.com/TannerHartt";
-}
 
 window.onload = function() {
     canvas = document.getElementById('adminButtons');

@@ -1,153 +1,56 @@
-let canvas = document.getElementById('addCardCanvas');
-let canvasWidth = window.innerWidth * .40;
-let canvasHeight = window.innerHeight * .50;
-let ctx = canvas.getContext("2d");
-let exCardImg = document.getElementById('exCardImg');
-let parchmentImg = document.getElementById('parchmentNote');
-let count = 0;
-let exCardSettle = false;
-let exCardPhase1 = false;
-let exCardPhase2 = false;
-let exCardPhase3 = false;
-let parchmentPhase1 = false;
 
-let exCardImageLeft = -15;
-let parchmentImgLeft = -220;
+let nameBoxOnCard = document.getElementById("name");
+let nameBoxInDiv = document.getElementById("cardName");
+let manaCostInDiv = document.getElementById("cardManaCost");
+let manaOnCard1 = document.getElementById("mana1");
+let manaOnCard2 = document.getElementById("mana2");
+let manaOnCard3 = document.getElementById("mana3");
+let manaOnCard4 = document.getElementById("mana4");
+let manaOnCard5 = document.getElementById("mana5");
+let flavorTextInDiv = document.getElementById('cardDescription');
+let flavorTextOnCard = document.getElementById('frame-text-box');
+let cardTypeOnCard = document.getElementById('typeOfCard');
+let cardTypeInDiv = document.getElementById('cardType');
+let cardBgOnCard = document.querySelector('cardBg');
+let cardBgInDiv = document.getElementById('cardBgDiv');
 
-let urlString = window.location.href;
-let cardString = urlString.split('=')[1];
-let cardString2 = new URLSearchParams(cardString);
-let cardString2Length = cardString2.toString().length-1;
-let cardIdString = cardString2.toString().substring(0,cardString2Length);
-let cardURLFirstChar = cardIdString.toString().substring(0,1);
-let cardURLSecondChar = cardIdString.toString().substring(1,2);
-let cardURL = "https://c1.scryfall.com/file/scryfall-cards/normal/front/"+cardURLFirstChar+"/"+cardURLSecondChar+"/"+cardIdString+".jpg?1562440211";
-exCardImg.src = cardURL;
-
-
-fetch('/cards').then(resp => resp.json()).then(cards => {
-    document.querySelector('#cardsDiv').innerHTML = listCards(cards);
-});
+let blueMana = '9bc5ef';
+let blackMana = 'e1d5d9';
+let redMana = 'f8ac95';
+let greenMana = 'ADD3AC';
+let whiteMana = 'fffff1';
 
 window.onload = function() {
-    canvas.width = canvasWidth;
-    canvas.height = canvasHeight;
-
-    let fps = 30;
-    setInterval(DrawImage, 1000/fps);
+    flavorTextInDiv.value = flavorTextOnCard.innerHTML;
+    cardTypeInDiv.value = cardTypeOnCard.innerHTML;
+    nameBoxInDiv.value = nameBoxOnCard.innerHTML;
+    alert(window.getComputedStyle(cardBgOnCard, false).backgroundImage);
 }
 
-function ColorRect (leftX, topY, boxWidth, boxHeight, fillColor) {
-    if (fillColor !== "Clear") {
-        ctx.fillStyle = fillColor;
-        ctx.fillRect(leftX, topY, boxWidth, boxHeight);
-    } else
-        ctx.reset();
+function ChangeNameOnCard() {
+    nameBoxOnCard.innerHTML = nameBoxInDiv.value;
+
+}
+function ChangeFlavorText() {
+    // let lines = flavorTextInDiv.value.split('\n');
+    // for (let i=0; i < lines.length; i++)
+    flavorTextOnCard.innerHTML = flavorTextInDiv.value;
 }
 
-function DrawImage() {
-
-    ColorRect(0,0, canvasWidth, canvasHeight, "Clear");
-    ctx.drawImage(parchmentImg, parchmentImgLeft, window.innerHeight * .1435);
-    ctx.drawImage(exCardImg, exCardImageLeft, window.innerHeight * .1);
-
-    if (!exCardSettle && !exCardPhase1 && !exCardPhase2) {
-        // if Example Card hasn't settled into place on the canvas.
-        exCardImageLeft += 15;
-        if (exCardImageLeft >= 300) {
-            exCardSettle = true;
-            exCardImageLeft -= 20;
-        }
-    }
-
-    if (exCardSettle && !exCardPhase1 && !exCardPhase2) {
-        // if exCard has gone as far from left as intended, but not gone toward left yet.
-        exCardImageLeft -= 5;
-        if (exCardImageLeft <= 230) {
-            exCardPhase1 = true;
-            exCardImageLeft += 8;
-        }
-    }
-
-    if (exCardSettle && exCardPhase1 && !exCardPhase2) {
-        // If card has gone as far from the left as intended, has gone a little more toward the left, but not travelled back.
-        exCardImageLeft += 7;
-        if (exCardImageLeft >= 300)
-            exCardPhase2 = true;
-    }
-
-    if (exCardSettle && exCardPhase1 && exCardPhase2 && !exCardPhase3) {
-        // If card has finished the longer routes, and needs to settle 3 points behind
-        exCardImageLeft -= 5;
-        if (exCardImageLeft <= 280) {
-            exCardPhase3 = true;
-            parchmentImgLeft = exCardImageLeft;
-        }
-    }
-
-    if (exCardPhase3 && !parchmentPhase1) {
-        parchmentImg.style.opacity += .25;
-        parchmentImgLeft += 15;
-        if (parchmentImgLeft >= 500)
-            parchmentPhase1 = true;
-    }
+function ChangeCardType() {
+    cardTypeOnCard.innerHTML = cardTypeInDiv.value;
 }
 
-
-let welcomeMsg = 'Magic the Gathering Database';
-document.querySelector('h1').innerText = welcomeMsg;
-
-fetch('/cards').then(resp => resp.json()).then(cards => {
-    document.querySelector('#cardsDiv').innerHTML = listCards(cards);
-});
-
-function listCards(json) {
-    return `${json.map(listCard).join('\n')}`;
-}
-// lists the cards in the database to the screen
-let listCard = function(card) {
-    return '<p>' + card.typeId + ": " + card.cost + ": " + card.name + ": " + card.artist + ": " + card.multiverse + '</p>';
+function ChangeColor() {
+    switch (cardBgInDiv.value) {
+        case "Red":
+            alert("changed to red");
+            cardBgOnCard.src="red-background.jpg";
+            break;
+    }
 }
 function goToButton(goToUrl) {
     window.location.href=goToUrl;
 }
-
-
-function postSearch() {
-    let searchURL = {
-        "typeId": document.getElementById("typeId").value,
-        "cost": document.getElementById("cost").value,
-        "name": document.getElementById("name").value
-    }
-    console.log(card);
-    fetch("/cards", {
-        method: "POST",
-        headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(card)
-    }).then((result) => {
-        if (result.status !== 200) {
-            throw new Error("Bad Server Response");
-        }
-        console.log(result.text());
-    }).catch((error) => { console.log(error); })
-    fetch('/cards').then(resp => resp.json()).then(cards => {
-            document.querySelector('#cardsDiv').innerHTML = listCards(cards);
-        }
-    );
-    window.document.location.reload();
-}
-
-// Creates the mouse hover event to the add card/insert button
-let button = document.querySelector('button');
-    button.addEventListener('mouseover',function() {
-            button.textContent = "insert";
-    })
-    button.addEventListener('mouseout',function() {
-        button.textContent="Add Card";
-    })
-
 
 

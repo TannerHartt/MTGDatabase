@@ -36,17 +36,21 @@ public class CardServlet extends HttpServlet {
      * Servlet set up to display the contents of the database to the server. Prints and sets content type as raw JSON data.
      * @param req http request sent from the server.
      * @param resp printing/sending the response to the server to display on the webpage.
-     * @throws ServletException if this error occurs, it throws the error back to the calling method rather than handling it here.
      * @throws IOException if this error occurs, it throws it back to the method that called it.
      */
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
         List<Card> cards = new ArrayList<>();
         try {
             ResultSet rs = conn.prepareStatement("select * from cards").executeQuery();
             while (rs.next()) {
-                Card cardToAdd = new Card(rs.getInt("TypeId"),rs.getString("ManaCost"),rs.getString("Name"),
+                Card cardToAdd = new Card(
+                        rs.getInt("CardId"),
+                        rs.getInt("TypeId"),
+                        rs.getString("ManaCost"),
+                        rs.getString("Name"),
                         rs.getString("Artist"),
+                        rs.getString("ColorIdentity"),
                         rs.getLong("Multiverse"),
                         rs.getString("Rarity"),
                         rs.getString("scryfallId"));
@@ -74,14 +78,16 @@ public class CardServlet extends HttpServlet {
         ObjectMapper mapper = new ObjectMapper();
         Card newCard = mapper.readValue(req.getInputStream(), Card.class);
         try {
-            PreparedStatement stmt = conn.prepareStatement("insert into cards values (?,?,?,?,?,?,?)");
-            stmt.setInt(1, newCard.getTypeId());
-            stmt.setString(2, newCard.getCost());
-            stmt.setString(3, newCard.getName());
-            stmt.setString(4, newCard.getArtist());
-            stmt.setLong(5, newCard.getMultiverse());
-            stmt.setString(6, newCard.getRarity());
-            stmt.setString(7, newCard.getScryfallId());
+            PreparedStatement stmt = conn.prepareStatement("insert into cards values (?,?,?,?,?,?,?,?,?)");
+            stmt.setInt(1, newCard.getCardId());
+            stmt.setInt(2, newCard.getTypeId());
+            stmt.setString(3, newCard.getCost());
+            stmt.setString(4, newCard.getName());
+            stmt.setString(5, newCard.getArtist());
+            stmt.setString(6, newCard.getColorIdentity());
+            stmt.setLong(7, newCard.getMultiverse());
+            stmt.setString(8, newCard.getRarity());
+            stmt.setString(9, newCard.getScryfallId());
             stmt.executeUpdate();
         } catch (SQLException e) {
             System.err.println("Failed to insert: " + e.getMessage());

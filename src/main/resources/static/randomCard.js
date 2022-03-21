@@ -16,3 +16,6 @@ fetch('/cards').then(card => {
 let listCard = function() {
     return '<img class="imageShadow" src="https://gatherer.wizards.com/Handlers/Image.ashx?multiverseid='+multiverseId+'&type=card">'
 }
+function goToButton(goToUrl) {
+    window.location.href=goToUrl;
+}

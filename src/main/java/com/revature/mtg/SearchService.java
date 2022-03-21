@@ -44,10 +44,12 @@ public class SearchService extends HttpServlet {
             ResultSet rs = conn.prepareStatement("select * from cards").executeQuery();
             while (rs.next()) {
                 Card cardToAdd = new Card(
+                        rs.getInt("CardId"),
                         rs.getInt("TypeId"),
                         rs.getString("ManaCost"),
                         rs.getString("Name"),
                         rs.getString("Artist"),
+                        rs.getString("ColorIdentity"),
                         rs.getLong("Multiverse"),
                         rs.getString("Rarity"),
                         rs.getString("ScryfallId"));
@@ -80,7 +82,7 @@ public class SearchService extends HttpServlet {
 
         resp.getWriter().println(
                 "</div>" +
-                        "<div class pageBottom></div>" +
+//                        "<div class pageBottom></div>" +
                         "</body>"+
                         "</html>"
         );

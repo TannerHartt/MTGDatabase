@@ -26,7 +26,7 @@ public class App {
         server.addServlet("", "addCard", new AddCard()).addMapping("/addCard");
         server.addServlet("","allCards", new AllCards()).addMapping("/allCards");
         server.addServlet("","randomCards", new RandomCard()).addMapping("/randomCard");
-        server.addServlet("", "Logging", new LogPrint()).addMapping("/logs");
+//        server.addServlet("", "Logging", new LogPrint()).addMapping("/logs");
         server.addServlet("","Search", new SearchService()).addMapping("/search");
 
 //        Logger logger = LoggerFactory.getLogger(App.class);
