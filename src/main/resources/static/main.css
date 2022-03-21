@@ -8,6 +8,13 @@
 }
 div.glass { margin:auto; }
 
+input#glass {
+    cursor:pointer;
+    width: 60px;
+    height: 35px;
+
+}
+
 button.glass{
    cursor:pointer;
     width: 150px;

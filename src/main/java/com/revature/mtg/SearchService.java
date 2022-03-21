@@ -11,6 +11,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 
 public class SearchService extends HttpServlet {
@@ -55,28 +56,33 @@ public class SearchService extends HttpServlet {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-
-        int count=0;
-        for (Card stackOfCards : cards) {
-            if (cards.get(count).getName().contains(replacedString)) {
-                resp.getWriter().println(
+        resp.getWriter().println(
                         "<html>" +
                         "<head>" +
-                        "<title>Card View </title> "+
+                        "<title>Card View</title> "+
                         "<link rel='stylesheet' href='searchPage.css'>" +
                         "<link rel='icon' href='favicon.ico'>" +
                         "</head>" +
                         "<body>"+
                         "<div class='outerContents'>" +
                         "<a href='index.html'><img class='logo' src='https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Magicthegathering-logo.svg/512px-Magicthegathering-logo.svg.png?20160501122627%3E'></a> <br><br>"+
-                        "<div class='cardsToShow'> " +
-                        "<img class='logo' src='https://gatherer.wizards.com/Handlers/Image.ashx?multiverseid="+cards.get(count).getMultiverse()+"&type=card'>"+
-                        "</div>" +
-                        "<div class pageBottom></div>" +
-                        "</body>"+
-                        "</html>");
+                        "<h1><center><b>Search Results for <i>" + replacedString + "</i></b></center></h1><br><br>" +
+                        "<div class='cardsToShow'> " );
+
+
+        int count=0;
+        for (Card stackOfCards : cards) {
+            if (cards.get(count).getName().toLowerCase().contains(replacedString.toLowerCase())) {
+                resp.getWriter().println("<a href='viewcard.html?scryfallId="+cards.get(count).getScryfallId()+"'><img src='https://gatherer.wizards.com/Handlers/Image.ashx?multiverseid="+cards.get(count).getMultiverse()+"&type=card'></a>");
             }
             count++;
         }
+
+        resp.getWriter().println(
+                "</div>" +
+                        "<div class pageBottom></div>" +
+                        "</body>"+
+                        "</html>"
+        );
     }
 }
