@@ -111,13 +111,22 @@ INSERT INTO "cards" VALUES (77,7,'L','Rugged Highlands','Adam Paquette',0,548586
 INSERT INTO "cards" VALUES (78,5,'RRWWWBB','Ruinous Ultimatum','Chase Stone',0,479724,3,'50c1d6ca-7789-46b5-bc89-85cc3915cb85');
 INSERT INTO "cards" VALUES (79,1,'RW','Savai Thundermane','Svetlin Velinov',0,479725,2,'73d3925c-cf7d-4546-bc70-33f04d4b7566');
 INSERT INTO "cards" VALUES (80,2,'0','Black Lotus','Christopher Rush',7,9764,3,'4c85d097-e87b-41ee-93c6-0e54ec41b174');
-
--- INSERT INTO "cards" VALUES (8,'','','',mid,rar,'');
--- INSERT INTO "cards" VALUES (8,'','','',mid,rar,'');
--- INSERT INTO "cards" VALUES (8,'','','',mid,rar,'');
--- INSERT INTO "cards" VALUES (8,'','','',mid,rar,'');
-
-
+INSERT INTO "cards" VALUES (81,1,'4G','Auspicious Starrix','Lucas','5',479664,2,'a39ae1e4-d4dd-4691-af5a-5fa25ace4ebe');
+INSERT INTO "cards" VALUES (82,1,'3U','Avian Oddity','Simon Dominic',4,479562,2,'f325873b-97de-4701-910f-ec5cdb66de33');
+INSERT INTO "cards" VALUES (83,6,'2B','Bastion of Remembrance','artist',2,479593,2,'2dd354dd-939e-4b1a-8ed6-fe89a7fd64bf');
+INSERT INTO "cards" VALUES (84,1,'5B','Blitz Leech','artist',2,479594,1,'7d9b5bde-a851-480b-b45e-d384fd1c11bb');
+INSERT INTO "cards" VALUES (85,1,'2BG','Boneyard Lurker','Nilis Hamm',0,479698,2,'37e4df5b-ec53-4f8a-8c26-272b3177c0a6');
+INSERT INTO "cards" VALUES (86,7,'L','Voldaren Estate','Richard Wright',0,544452,3,'2577e5fd-903a-44ce-989a-d53d56511ad3');
+INSERT INTO "cards" VALUES (87,7,'L','Lavaclaw Reaches','Veronique Meignaud',0,457141,4,'409fcd0c-8449-4623-8bf0-cd7ca0937a4a');
+INSERT INTO "cards" VALUES (88,7,'L','Hall of Storm Giants','Alex Stone',4,530838,3,'bf8f052d-8840-4905-a807-9a305f4fd8f7');
+INSERT INTO "cards" VALUES (89,1,'4RR','Muxus, Goblin Grandee','Dmitry Burmak',3,489191,3,'2c716d10-2130-43b7-a939-349d437e1091');
+INSERT INTO "cards" VALUES (90,5,'8RR','Explosive Singularity','Ari',3,552257,4,'e6cdd822-44a1-4d58-9de4-69fc56eae255');
+INSERT INTO "cards" VALUES (91,3,'2U','Thirst for Discovery','Dan Scott',4,544468,2,'1ea179e9-9c0d-46c1-9ee8-60be68e1f79c');
+INSERT INTO "cards" VALUES (92,1,'XGU','Verazol, the Split Current','Daarken',4,495658,3,'752a2aa9-40ed-4c64-b945-bc6fec606b7b');
+INSERT INTO "cards" VALUES (93,1,'5BB','Toxrill, the Corrosive','DZO',2,545043,4,'84e64f38-b1f3-47cd-8cfb-a4861369aca3');
+INSERT INTO "cards" VALUES (94,1,'1BB','Nashi, Moon Sage''s Scion','Yoshiya',2,552722,4,'2893b070-a610-4273-beb2-7609a2da0499');
+INSERT INTO "cards" VALUES (95,1,'1U','Spellstutter Sprite','Maria Poliakova',4,509350,3,'3899605d-2203-4ab6-9ff5-69490382eea4');
+INSERT INTO "cards" VALUES (96,2,'3','Strixhaven Stadium','Piotr Dura',7,516958,3,'421674ee-4b85-4942-b166-952598165826');
 
 
 

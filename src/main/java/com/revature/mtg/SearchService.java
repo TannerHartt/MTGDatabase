@@ -11,7 +11,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Locale;
 
 
 public class SearchService extends HttpServlet {
@@ -79,7 +78,6 @@ public class SearchService extends HttpServlet {
             }
             count++;
         }
-
         resp.getWriter().println(
                 "</div>" +
 //                        "<div class pageBottom></div>" +
