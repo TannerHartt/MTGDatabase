@@ -1,8 +1,8 @@
 body { background-image:url("addACardWallpaper2.jpg"); background-repeat:no-repeat; background-size:cover;}
 
-img.logo { display:block; margin:auto; }
-img#exCardImg { z-index:101; }
-img#parchmentNote { opacity:0.1; z-index:1; }
+img.logo { display:block; margin:auto;  }
+img#exCardImg { z-index:101;}
+
 
 div.pageBottom { background-color:#000000; position:absolute; height:300px; width:100%; bottom:-300px; left:0px;}
 
@@ -16,7 +16,8 @@ canvas.addCardCanvas { background-color:transparent; position:absolute; right:5p
     box-shadow: 0 8px 32px 0 rgba(0,0,0,0.37);
 }
 
-
+div.contents{
+}
 .glass{
     background: linear-gradient(135deg,rgba(255,255,255,0.3),rgba(255,255,255,0));
     backdrop-filter: blur(10px);

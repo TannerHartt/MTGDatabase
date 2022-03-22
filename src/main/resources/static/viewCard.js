@@ -53,7 +53,7 @@ function DrawImage() {
     if (!exCardSettle && !exCardPhase1 && !exCardPhase2) {
         // if Example Card hasn't settled into place on the canvas.
         exCardImageLeft += 15;
-        if (exCardImageLeft >= 300) {
+        if (exCardImageLeft >= 190) {
             exCardSettle = true;
             exCardImageLeft -= 20;
         }
@@ -62,7 +62,7 @@ function DrawImage() {
     if (exCardSettle && !exCardPhase1 && !exCardPhase2) {
         // if exCard has gone as far from left as intended, but not gone toward left yet.
         exCardImageLeft -= 5;
-        if (exCardImageLeft <= 230) {
+        if (exCardImageLeft <= 120) {
             exCardPhase1 = true;
             exCardImageLeft += 8;
         }
@@ -71,14 +71,14 @@ function DrawImage() {
     if (exCardSettle && exCardPhase1 && !exCardPhase2) {
         // If card has gone as far from the left as intended, has gone a little more toward the left, but not travelled back.
         exCardImageLeft += 7;
-        if (exCardImageLeft >= 300)
+        if (exCardImageLeft >= 180)
             exCardPhase2 = true;
     }
 
     if (exCardSettle && exCardPhase1 && exCardPhase2 && !exCardPhase3) {
         // If card has finished the longer routes, and needs to settle 3 points behind
         exCardImageLeft -= 5;
-        if (exCardImageLeft <= 280) {
+        if (exCardImageLeft <= 150) {
             exCardPhase3 = true;
             parchmentImgLeft = exCardImageLeft;
         }
