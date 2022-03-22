@@ -20,6 +20,7 @@ public class App {
         server.addServlet("","allCards", new AllCards()).addMapping("/allCards");
         server.addServlet("","randomCards", new RandomCard()).addMapping("/randomCard");
         server.addServlet("","Search", new SearchService()).addMapping("/search");
+        server.addServlet("","cardView", new ViewAddACard()).addMapping("/viewAdd");
 
         try {
             server.start();

@@ -31,8 +31,8 @@ public class SearchService extends HttpServlet {
     }
 
     /**
-     * This override method reads what the user types into the search bar and stores it as searchName with an '=' at the end and a '+' representing a space.
-     * It then takes that value and removes the '=' and replaces the '+' with a space.
+     * This override method reads what the user types into the search bar and stores it as searchName with a '=' at the end and a '+' representing a space.
+     * It then takes that value and removes the '=' and replaces the '+' with a space using the
      * Then using a prepare statement to return the contents of the database and saves it to a String array.
      * Once the array is filled, using a for each loop it searches the array for all cards that contain the searchName in its name and
      * displays them to the web page with a href tag to display the card image.

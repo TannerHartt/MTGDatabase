@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Welcome to the Dungeon</title>
+    <title>Create a Card</title>
     <link rel="stylesheet" href="addCard.css">
     <link rel="icon" href="favicon.ico">
     <link href="//cdn.jsdelivr.net/npm/mana-font@latest/css/mana.css" rel="stylesheet" type="text/css" />
@@ -10,8 +10,8 @@
 <body>
 <a href="index.html"><img class="logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Magicthegathering-logo.svg/512px-Magicthegathering-logo.svg.png?20160501122627%3E%27%3E"></a>
 <div class="contents">
-
-    <div class="card-container">
+    <button id="purpButton" class="glass" onclick="goToButton('/viewCard.html')">See Full List</button>
+    <div class="card-container" id="card-container">
 
         <div class="card-background" id="cardBg">
 
@@ -19,7 +19,13 @@
 
                 <div class="frame-header">
                     <h1 class="name" id="name">Oath of Nissa</h1>
-                    <img id="mana2" class="mana-icon" src="g.png">
+                    <div>
+                        <img id="mana1" class="" src="">
+                        <img id="mana2" class="" src="">
+                        <img id="mana3" class="" src="">
+                        <img id="mana4" class="" src="">
+                        <img id="mana5" class="mana-iconGreen" src="g.png">
+                    </div>
                 </div>
 
                 <img class="frame-art" src="http://agamedesigner.info/nissa.jpg" title="Nissa Art">
@@ -58,7 +64,7 @@
     <div class="formForCard">
         <form>
             <label for="cardName">Name: </label><input type="name" name="cardName" id="cardName" onchange="ChangeNameOnCard()"><br>
-            <label for="cardManaCost">Mana Cost: </label><input type="name" name="cardManaCost" id="cardManaCost" maxlength="5"><br><br>
+            <label for="cardManaCost">Mana Cost: </label><input type="name" name="cardManaCost" id="cardManaCost" maxlength="5" onchange="ChangeManaPool()"><br><br>
             <label>Card Color: </label>
             <select id="cardBgDiv" onchange="ChangeColor()">
                 <option value="Red">Red</option>
@@ -68,15 +74,20 @@
                 <option value="White">White</option>
             </select><br><br><br><br><br><br><br>
             <label for="cardImage">Card Image: </label><input type="name" name="cardImage" id="cardImage"><br><br><br><br><br><br><br><br><br><br>
-            <label for="cardType">Card Type: </label><input type="name" name="cardType" id="cardType" onchange="ChangeCardType()"><br><br><br><br>
-            <label for="cardDescription">Flavor Text: </label><br><textarea class="cardDescription" name="cardDescription" id="cardDescription" onchange="ChangeFlavorText()"></textarea>
+            <label for="cardType">Card Type: </label><input type="name" name="cardType" id="cardType" onchange="ChangeCardType()"><br><br><br>
+            <label for="cardDescription">Flavor Text: </label><br><textarea class="cardDescription" name="cardDescription" id="cardDescription" onchange="ChangeFlavorText()"></textarea><br><br>
+            <button type="button" id="cardSubmitButton" onclick="postCreation()">Submit Card</button>
         </form>
     </div>
+
+
 </div><!-- Contents //-->
+
 <div class="pageBottom">
     <button id="purpButtonT" class="gitGlass" onclick="goToButton('https://github.com/TannerHartt')">Tanner's Github</button><br><br><br>
     <button id="purpButtonD" class="gitGlass" onclick="goToButton('https://github.com/Gatene1')">David's Github</button>
 </div>
+<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.5/dist/html2canvas.min.js"></script>
 <script src="addCard.js"></script>
 </body>
 </html>

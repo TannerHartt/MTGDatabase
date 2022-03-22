@@ -67,10 +67,9 @@ public class CardServlet extends HttpServlet {
     }
 
     /**
-     * An override method set up to insert data into the memory database by the user. Used for "Add Card" functionality.
-     * @param req a http request sent from the server to insert the specified fields into the database table.
-     * @param resp a http response to the server, adding the fields to the table and printing them to the server.
-     * @throws ServletException if this error occurs, it throws the error back to the calling method rather than handling it here.
+     * Servlet set up to display the contents of the database to the server. Prints and sets content type as raw JSON data.
+     * @param req http request sent from the server.
+     * @param resp printing/sending the response to the server to display on the webpage.
      * @throws IOException if this error occurs, it throws it back to the method that called it.
      */
     @Override
