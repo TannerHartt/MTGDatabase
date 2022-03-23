@@ -79,7 +79,6 @@ function ChangeCardType() {
 }
 
 function ChangeColor() {
-    //alert(window.getComputedStyle(cardBgOnCard, false).backgroundImage);
     switch (cardBgInDiv.value) {
         case "Red":
             cardBgOnCard.style.background = "url('red-background.jpg') no-repeat";

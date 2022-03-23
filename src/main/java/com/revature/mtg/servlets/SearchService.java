@@ -1,5 +1,6 @@
-package com.revature.mtg;
+package com.revature.mtg.servlets;
 
+import com.revature.mtg.Card;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;

@@ -1,7 +1,7 @@
 package com.revature.mtg;
 
 /**
- * Simple constructor class to set properties for each card and return them as a json.
+ * Simple constructor class to set properties for each card and return them as a json using the override toString method.
  */
 public class Card {
     private int cardId;

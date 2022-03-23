@@ -16,6 +16,7 @@ textarea.cardDescription { width:470px; height:150px; text-align: left;}
 @font-face { font-family: 'MagicFont'; src: url('MAGIC.TTF') format('truetype'); }
 
 button#cardSubmitButton { width:200px; height:25px; }
+
 .glass{
     background: linear-gradient(135deg,rgba(255,255,255,0.3),rgba(255,255,255,0));
     backdrop-filter: blur(10px);

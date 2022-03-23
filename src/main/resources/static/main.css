@@ -7,8 +7,8 @@
     box-shadow: 0 8px 32px 0 rgba(0,0,0,0.37);
 }
 
-.gitGlass{
-    background: linear-gradient(135deg,rgba(255,255,255,0.3),rgba(255,255,255,0));
+
+.gitGlass{    background: linear-gradient(135deg,rgba(255,255,255,0.3),rgba(255,255,255,0));
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     border-radius: 10px; border: 5px solid rgba(255, 255, 255, .3);
